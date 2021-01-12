@@ -1,0 +1,360 @@
+:root {
+  --light-color: #fff;
+  --dark-color: #11141b;
+  --primary-color: cadetblue;
+  --switch-width: 3rem;
+  --switch-height: calc(var(--switch-width) / 2);
+  --switch-border-radius: calc(var(--switch-height) / 2);
+  --animation-time: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   container style start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  transition: all var(--animation-time) ease-in-out;
+}
+
+.container.night {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+.container__content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   container style end
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   switch wrapper and switch style start 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.swrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.switch {
+  height: var(--switch-height);
+  width: var(--switch-width);
+  margin: 0 1rem;
+  background-color: #ddd;
+  border-radius: var(--switch-border-radius);
+  position: relative;
+  cursor: pointer;
+  transition: all var(--animation-time) ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.switch.on {
+  background-color: var(--primary-color);
+}
+
+.switch__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--switch-height);
+  width: var(--switch-height);
+  border-radius: var(--switch-border-radius);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: all var(--animation-time) ease-in-out;
+}
+
+.switch.on .switch__button {
+  transform: translateX(var(--switch-height));
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   switch wrapper and switch style end 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   intro style start 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.intro {
+  margin-bottom: 4rem;
+}
+
+.intro__namaste {
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+.intro__introduction {
+  font-size: 1.8rem;
+  max-width: 48rem;
+  margin-bottom: 4rem;
+}
+
+.intro__contact {
+  font-size: 1.1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.intro__email {
+  text-decoration: underline;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   intro style end 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   background style start 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.background {
+  margin-bottom: 4rem;
+}
+
+.background__heading {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.background__content {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   background style end 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   skills style start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.skills {
+  margin-bottom: 4rem;
+}
+
+.skills__heading {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.skills__content {
+  font-size: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   skills style end
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   projects style start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.projects {
+  margin-bottom: 4rem;
+}
+
+.projects__heading {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.projects__content {
+  font-size: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.projects__item {
+  margin-bottom: 2rem;
+}
+
+.projects__item:last-child {
+  margin-bottom: 0;
+}
+
+.projects__item__heading {
+  margin-bottom: 0.5rem;
+}
+
+.projects__item__source {
+  display: inline-block;
+  color: var(--primary-color);
+  padding: 0.5rem 1.4rem;
+  transition: transform 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.projects__item__source:hover {
+  transform: translateX(0.5rem);
+}
+
+.project__item__tech {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.2rem;
+  color: var(--primary-color);
+}
+
+.project__item__tech:first-child {
+  margin-left: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   projects style end
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   social links style start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.social {
+  margin-bottom: 1rem;
+}
+
+.social__heading {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.social__content {
+  margin-left: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.social__icon {
+  margin-right: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.social__icon:hover {
+  transform: scale(1.5);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   social links style end
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   media queries start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media (min-width: 576px) {
+  .skills__content {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills__content span {
+    margin-right: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro {
+    margin-bottom: 6rem;
+  }
+
+  .intro__namaste {
+    font-size: 2.4rem;
+  }
+
+  .intro__introduction {
+    font-size: 2.2rem;
+  }
+
+  .intro__contact {
+    font-size: 1.2rem;
+  }
+
+  .background {
+    display: flex;
+    margin-left: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .background__heading {
+    flex: 0 0 10rem;
+  }
+
+  .skills {
+    display: flex;
+    margin-left: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .skills__heading {
+    flex: 0 0 10rem;
+  }
+
+  .projects {
+    display: flex;
+    margin-left: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .projects__heading {
+    flex: 0 0 10rem;
+  }
+
+  .social {
+    display: flex;
+    margin-left: 4rem;
+  }
+
+  .social__heading {
+    flex: 0 0 10rem;
+  }
+
+  .social__content {
+    padding-top: 0.6rem;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   media queries end
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
