@@ -1,0 +1,82 @@
+.ant-input,
+.ant-input-number,
+.ant-input-affix-wrapper,
+.ant-btn,
+.ant-dropdown-menu,
+.ant-notification-notice,
+.ant-modal-content,
+.ant-upload.ant-upload-select-picture-card,
+.ant-upload-list-picture-card .ant-upload-list-item,
+.ant-select-dropdown,
+.ant-tooltip-inner,
+.ant-tag {
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.ant-input-group-addon,
+.ant-select-selector {
+  border-top-left-radius: 0.375rem !important;
+  border-bottom-left-radius: 0.375rem !important;
+}
+
+.ant-menu-inline,
+.ant-menu-vertical {
+  border-color: transparent;
+}
+
+.ant-form-item-has-error .ant-upload.ant-upload-select-picture-card {
+  border-color: #ff4d4f;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+// antd search input border radius start
+.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+// antd search input border radius end
+
+// antd pagination css start
+.ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-disabled,
+.ant-pagination-item,
+.ant-pagination-item-link {
+  border-radius: 0.375rem !important;
+}
+// antd pagination css end
+
+// antd layout custom css start
+.ant-menu-submenu > .ant-menu {
+  border-radius: 0.375rem;
+}
+
+.ant-breadcrumb {
+  line-height: 1;
+}
+
+.ant-layout {
+  min-height: 100%;
+  height: auto;
+}
+
+.ant-layout-header {
+  line-height: normal;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected,
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-active {
+  background-color: #d4d4d4;
+}
+// antd layout custom css end

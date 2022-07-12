@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+#__next {
+  height: 100%;
+  width: 100%;
+}
+
+a,
+a:hover {
+  color: inherit;
+}
+
+.container {
+  max-width: 1600px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Nprogress styles start
+#nprogress .bar {
+  background: #da2b39;
+  height: 3px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #da2b39, 0 0 5px #da2b39;
+}
+// Nprogress styles end
+
+// Custom scrollbar start
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
+// Custom scrollbar end
+
+// Suneditor styles start
+.sun-editor {
+  font-family: inherit !important;
+  border-radius: 0.375rem;
+}
+
+.sun-editor .se-toolbar {
+  outline: none !important;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  border-bottom: 1px solid #dadada;
+}
+
+.se-resizing-bar {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.ant-form-item-has-error {
+  .sun-editor {
+    border-color: #ff4d4f;
+  }
+  .se-toolbar {
+    border-color: #ff4d4f;
+  }
+}
+// Suneditor styles end
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
