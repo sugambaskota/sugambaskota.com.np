@@ -5,10 +5,7 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
   const validation = Joi.object()
     .keys({
       name: Joi.string().required().label("name"),
-      email: Joi.string().required().label("email"),
-      address: Joi.string().required().label("address"),
-      contactNumber: Joi.string().required().label("contactNumber"),
-      message: Joi.string().required().label("message"),
+      image: Joi.string().required().label("image"),
     })
     .validate(req.body, { stripUnknown: true });
 

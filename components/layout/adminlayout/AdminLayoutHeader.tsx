@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Layout, Grid, Dropdown, Avatar, Menu } from "antd";
 import Link from "next/link";
-import { useSession, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { AiOutlineUser } from "react-icons/ai";
 import { CgMenuLeft } from "react-icons/cg";
 import {
@@ -10,12 +10,14 @@ import {
   RiArrowDownSLine,
 } from "react-icons/ri";
 
+import useProfile from "services/auth/useProfile";
+
 export default function AdminLayoutHeader({
   collapsed,
   setCollapsed,
   openMenu,
 }: any) {
-  const session = useSession();
+  const { data } = useProfile();
 
   const { Header } = Layout;
   const screens = Grid.useBreakpoint();
@@ -26,7 +28,7 @@ export default function AdminLayoutHeader({
         {
           key: "profile",
           label: (
-            <Link href="/admin/profile">
+            <Link href="/admin/auth/profile">
               <span>My profile</span>
             </Link>
           ),
@@ -79,9 +81,9 @@ export default function AdminLayoutHeader({
         )}
         <Dropdown overlay={menu} trigger={["click"]} placement="bottom">
           <div className="flex items-center justify-center" role="button">
-            {session?.data?.user?.image ? (
+            {data?.data?.image ? (
               <Avatar
-                src={session?.data?.user?.image}
+                src={data?.data?.image}
                 size={40}
                 className="border border-neutral-100"
               />
@@ -92,9 +94,9 @@ export default function AdminLayoutHeader({
                 className="inline-flex items-center justify-center"
               />
             )}
-            {session?.data?.user?.name && (
+            {data?.data?.name && (
               <span className="ml-1 text-base">
-                {session?.data?.user?.name?.split(" ")[0]}
+                {data?.data?.name?.split(" ")[0]}
               </span>
             )}
             <RiArrowDownSLine size={18} className="inline-block" />

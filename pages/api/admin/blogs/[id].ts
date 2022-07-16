@@ -33,7 +33,7 @@ export default async function handler(
       const blog = await Blog.findById(req.query.id);
 
       res.status(200).json({
-        title: "",
+        title: "Blog",
         message: "Blog got successfully",
         data: blog,
       });
@@ -52,7 +52,7 @@ export default async function handler(
       const updatedBlog = await Blog.findByIdAndUpdate(req.query.id, validated);
 
       res.status(200).json({
-        title: "",
+        title: "Blg",
         message: "Blog updated successfully",
         data: updatedBlog,
       });
@@ -69,7 +69,7 @@ export default async function handler(
       await Blog.findByIdAndDelete(req.query.id);
 
       res.status(200).json({
-        title: "",
+        title: "Blog",
         message: "Blog deleted successfully",
       });
     } catch (error) {

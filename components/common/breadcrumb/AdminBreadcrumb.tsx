@@ -56,4 +56,16 @@ const CRUMBS: any = {
     Blogs: "/admin/blogs",
     Update: "",
   },
+  "/admin/contact-messages": {
+    Home: "/admin",
+    "Contact Messages": "",
+  },
+  "/admin/auth/profile": {
+    Home: "/admin",
+    Profile: "",
+  },
+  "/admin/auth/change-password": {
+    Home: "/admin",
+    "Change Password": "",
+  },
 };

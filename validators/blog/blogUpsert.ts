@@ -15,7 +15,7 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
       metaRobots: Joi.string().required().label("metaRobots"),
       canonical: Joi.string().required().label("canonical"),
     })
-    .validate(req.body);
+    .validate(req.body, { stripUnknown: true });
 
   if (validation.error) {
     return res.status(422).json({

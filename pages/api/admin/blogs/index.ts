@@ -40,7 +40,7 @@ export default async function handler(
       const total = await Blog.countDocuments();
 
       return res.status(200).json({
-        title: "",
+        title: "Blog",
         message: "Blogs got successfully",
         data: {
           pagination: {
@@ -83,7 +83,7 @@ export default async function handler(
       const newBlog = await blog.save();
 
       return res.status(201).json({
-        title: "",
+        title: "Blog",
         message: "Blog created successfully",
         data: newBlog,
       });

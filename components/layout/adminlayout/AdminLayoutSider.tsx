@@ -3,12 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { MdOutlineArticle } from "react-icons/md";
+import { BiMessageAltDetail } from "react-icons/bi";
 
 const determineDefaultOpenKeys = (router: any) => {
-  if (["/admin/blogs"].includes(router?.pathname)) {
-    return ["admin-blogs"];
-  }
-
   return [];
 };
 
@@ -23,7 +20,6 @@ export default function AdminLayoutSider({ closeMenu }: any) {
         </a>
       </div>
       <Menu
-        theme="light"
         mode="inline"
         selectedKeys={[router?.pathname]}
         defaultOpenKeys={determineDefaultOpenKeys(router)}
@@ -38,6 +34,12 @@ export default function AdminLayoutSider({ closeMenu }: any) {
             key: "/admin/blogs",
             label: <Link href="/admin/blogs">Blogs</Link>,
             icon: <MdOutlineArticle />,
+            onClick: () => closeMenu(),
+          },
+          {
+            key: "/admin/contact-messages",
+            label: <Link href="/admin/contact-messages">Messages</Link>,
+            icon: <BiMessageAltDetail />,
             onClick: () => closeMenu(),
           },
         ]}

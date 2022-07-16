@@ -27,30 +27,16 @@ export default async function handler(
 
   await dbConnect();
 
-  if (req.method === "GET") {
+  if (req.method === "DELETE") {
     try {
-      const page = req?.query?.page ? +req.query.page : 1;
-      const limit = req?.query?.limit ? +req.query.limit : 10;
+      await ContactMessage.findByIdAndDelete(req.query.id);
 
-      const contactMessages = await ContactMessage.find({})
-        .skip((page - 1) * limit)
-        .limit(limit);
-      const total = await ContactMessage.countDocuments();
-
-      return res.status(200).json({
+      res.status(200).json({
         title: "Contact Message",
-        message: "Contact messages got successfully",
-        data: {
-          pagination: {
-            page,
-            limit,
-            total,
-          },
-          data: contactMessages,
-        },
+        message: "Contact message deleted successfully",
       });
     } catch (error) {
-      return res.status(500).json({
+      res.status(500).json({
         title: "Sorry",
         message: "Something went wrong",
       });

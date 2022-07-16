@@ -9,7 +9,8 @@
 .ant-upload-list-picture-card .ant-upload-list-item,
 .ant-select-dropdown,
 .ant-tooltip-inner,
-.ant-tag {
+.ant-tag,
+.ant-popover-inner {
   border-radius: 0.375rem;
   overflow: hidden;
 }
@@ -52,7 +53,8 @@
 .ant-pagination-next,
 .ant-pagination-disabled,
 .ant-pagination-item,
-.ant-pagination-item-link {
+.ant-pagination-item-link,
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
   border-radius: 0.375rem !important;
 }
 // antd pagination css end

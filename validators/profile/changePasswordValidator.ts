@@ -4,13 +4,12 @@ import Joi from "joi";
 export default function (req: NextApiRequest, res: NextApiResponse) {
   const validation = Joi.object()
     .keys({
-      name: Joi.string().required().label("name"),
-      email: Joi.string().required().label("email"),
-      address: Joi.string().required().label("address"),
-      contactNumber: Joi.string().required().label("contactNumber"),
-      message: Joi.string().required().label("message"),
+      currentPassword: Joi.string().required().label("currentPassword"),
+      newPassword: Joi.string().required().label("newPassword"),
     })
-    .validate(req.body, { stripUnknown: true });
+    .validate(req.body, {
+      stripUnknown: true,
+    });
 
   if (validation.error) {
     return res.status(422).json({
