@@ -16,7 +16,7 @@ export default function AdminLayoutSider({ closeMenu }: any) {
     <div>
       <div className="flex h-[80px] items-center justify-center pt-4">
         <a href="/" target="_blank">
-          <img src="/logo.png" alt="" className="w-[64px]" />
+          <img src="/logo_dark.png" alt="" className="w-[64px]" />
         </a>
       </div>
       <Menu

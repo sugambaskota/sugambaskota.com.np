@@ -19,6 +19,7 @@ module.exports = {
       xxl: "1600px",
     },
   },
+  darkMode: "class",
   corePlugins: {
     preflight: false,
   },

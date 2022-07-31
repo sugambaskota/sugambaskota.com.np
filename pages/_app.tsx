@@ -3,8 +3,12 @@ import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import { ConfigProvider } from "antd";
 import { SessionProvider, useSession } from "next-auth/react";
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "antd/dist/antd.variable.min.css";
 import "styles/globals.scss";
@@ -12,6 +16,7 @@ import "styles/preflight.scss";
 import "styles/main.scss";
 import "styles/antd.scss";
 
+import ThemeProvider from "context/theme/ThemeContext";
 import { handleError } from "utils/handler/error";
 import SuspenseLoading from "components/loading/suspenseLoading/SuspenseLoading";
 import Layout from "components/layout/layout/Layout";
@@ -24,7 +29,7 @@ NProgress.configure({
 
 ConfigProvider.config({
   theme: {
-    primaryColor: "#6d28d9",
+    primaryColor: "#059669",
   },
 });
 
@@ -98,18 +103,20 @@ export default function MyApp({
 
   return (
     <SessionProvider session={session}>
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps?.dehydratedState}>
-          {Component?.config?.protected ? (
-            <Auth config={Component?.config}>
-              {getLayout(Component, pageProps)}
-            </Auth>
-          ) : (
-            <NoAuth>{getLayout(Component, pageProps)}</NoAuth>
-          )}
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps?.dehydratedState}>
+            {Component?.config?.protected ? (
+              <Auth config={Component?.config}>
+                {getLayout(Component, pageProps)}
+              </Auth>
+            ) : (
+              <NoAuth>{getLayout(Component, pageProps)}</NoAuth>
+            )}
+          </Hydrate>
           <ReactQueryDevtools initialIsOpen={false} />
-        </Hydrate>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
     </SessionProvider>
   );
 }

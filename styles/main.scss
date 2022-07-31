@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,13 +15,8 @@ body {
   width: 100%;
 }
 
-a,
-a:hover {
-  color: inherit;
-}
-
 .container {
-  max-width: 1600px;
+  max-width: 1400px;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
@@ -28,18 +25,19 @@ a:hover {
 
 // Nprogress styles start
 #nprogress .bar {
-  background: #da2b39;
+  background: #059669;
   height: 3px;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px #da2b39, 0 0 5px #da2b39;
+  box-shadow: 0 0 10px #059669, 0 0 5px #059669;
 }
 // Nprogress styles end
 
 // Custom scrollbar start
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {

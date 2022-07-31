@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import mutator from "services/mutator";
 import queryKeys from "reactQuery/constants";
@@ -12,7 +12,7 @@ export default function useBlogUpdate() {
     {
       onSuccess: (data) => {
         handleSuccess(data);
-        queryClient.invalidateQueries(queryKeys.admin.blogs);
+        queryClient.invalidateQueries([queryKeys.admin.blogs]);
       },
     }
   );

@@ -1,14 +1,19 @@
-import { useSession, signOut } from "next-auth/react";
-
+import Head from "next/head";
 import type { NextPage } from "next";
 
-const Home: NextPage = () => {
-  const session = useSession();
+import HomeHero from "components/home/homeHero/HomeHero";
+import Tparticles from "components/home/tParticles/Tparticles";
+import AboutMe from "components/home/aboutMe/AboutMe";
 
+const Home: NextPage = () => {
   return (
     <div>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
-      {session?.data?.user && <button onClick={() => signOut()}>Logout</button>}
+      <Head>
+        <title>Sugam Baskota | Web Developer</title>
+      </Head>
+      <Tparticles />
+      <HomeHero />
+      <AboutMe />
     </div>
   );
 };
