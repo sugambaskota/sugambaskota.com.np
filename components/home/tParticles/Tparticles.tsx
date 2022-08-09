@@ -19,6 +19,7 @@ export default function Tparticles() {
         left: 0,
         height: "100%",
         width: "100%",
+        zIndex: 100,
       }}
       options={{
         fullScreen: {

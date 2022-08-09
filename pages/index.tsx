@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import HomeHero from "components/home/homeHero/HomeHero";
 import Tparticles from "components/home/tParticles/Tparticles";
 import AboutMe from "components/home/aboutMe/AboutMe";
+import ContactMe from "components/home/contactMe/ContactMe";
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       <Tparticles />
       <HomeHero />
       <AboutMe />
+      <ContactMe />
     </div>
   );
 };

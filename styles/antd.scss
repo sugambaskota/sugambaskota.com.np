@@ -82,3 +82,12 @@
   background-color: #d4d4d4;
 }
 // antd layout custom css end
+
+// dark mode css start
+.ant-form-item-label > label {
+  transition: color 0.5s ease;
+}
+
+.dark .ant-form-item-label > label {
+  color: #fff;
+}

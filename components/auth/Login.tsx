@@ -35,9 +35,13 @@ export default function Login() {
   };
 
   return (
-    <div className="max-w-lg mx-auto">
-      <h1 className="mb-2 text-3xl text-center font-semibold">Login</h1>
-      <LoginForm isLoading={isLoading} onSubmit={handleSubmit} />
+    <div className="mx-auto max-w-lg">
+      <h1 className="mt-6 mb-4 text-center text-3xl font-semibold transition-colors duration-500 dark:text-white">
+        Login
+      </h1>
+      <div>
+        <LoginForm isLoading={isLoading} onSubmit={handleSubmit} />
+      </div>
     </div>
   );
 }

@@ -5,8 +5,7 @@ export default function AboutMe() {
         <span className="border-b-2 border-emerald-600">ABOUT ME</span>
       </div>
       <div className="mt-5 text-3xl font-semibold">
-        I am an enthusiastic full stack web developer, specializing in React
-        with a rich experience of over 2.5 years.
+        I am an enthusiastic full stack web developer, specializing in React.
       </div>
       <p className="mt-6 text-2xl">
         I develop wow looking, professional &amp; scalable web applications.
